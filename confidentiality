@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Confidentiality — Nelson Lord</title>
+  <meta name="description" content="We keep things private. Always.">
+  <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+<body>
+
+  <div class="nav-wrap">
+    <div class="container">
+      <div class="nav">
+        <a class="brand" href="/"><div class="mark">NL</div><div>NELSON LORD</div></a>
+        <div class="links">
+          <a href="/">Home</a>
+          <a href="/owners.html">For owners</a>
+          <a href="/advisors.html">For advisors</a>
+          <a class="active" href="/confidentiality.html">Confidentiality</a>
+          <a href="/contact.html">Contact</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="container">
+      <div class="split">
+        <div>
+          <div class="kicker">Confidentiality</div>
+          <h1 class="h1">We keep things private. Always.</h1>
+          <div class="lead">
+            These conversations can be sensitive — for you, your staff, your customers, and your family.
+            We treat confidentiality as non-negotiable.
+          </div>
+          <div class="btn-row">
+            <a class="btn primary" href="/contact.html">Request a confidential call</a>
+            <a class="btn ghost" href="tel:+447309690039">07309 690 039</a>
+          </div>
+        </div>
+
+        <div class="img-frame">
+          <img src="/assets/img/confidentiality.jpg" alt="Confidentiality image">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section tight">
+    <div class="container">
+      <div class="grid-2">
+        <div class="card">
+          <h3>Our commitments</h3>
+          <ul class="list">
+            <li>We don’t contact staff, customers, suppliers, or landlords without your approval</li>
+            <li>We keep discussions private and controlled</li>
+            <li>We involve third parties only when necessary and on a need-to-know basis</li>
+            <li>We don’t circulate opportunities casually</li>
+            <li>If we’re not the right fit, we’ll say so early</li>
+          </ul>
+        </div>
+        <div class="quote">
+          <p>“Nothing leaves the room without your agreement.”</p>
+          <small>— Nelson Lord</small>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="container">
+      <div class="footer-row">
+        <div>© <span id="y"></span> Nelson Lord</div>
+        <div>
+          <a href="tel:+447309690039">07309 690 039</a> ·
+          <a href="mailto:info@nelsonlord.co.uk">info@nelsonlord.co.uk</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+</body>
+</html>
