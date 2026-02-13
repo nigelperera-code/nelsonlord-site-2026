@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>For Advisors — Nelson Lord</title>
+  <meta name="description" content="A calm, credible buyer your clients will feel comfortable with.">
+  <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+<body>
+
+  <div class="nav-wrap">
+    <div class="container">
+      <div class="nav">
+        <a class="brand" href="/"><div class="mark">NL</div><div>NELSON LORD</div></a>
+        <div class="links">
+          <a href="/">Home</a>
+          <a href="/owners.html">For owners</a>
+          <a class="active" href="/advisors.html">For advisors</a>
+          <a href="/confidentiality.html">Confidentiality</a>
+          <a href="/contact.html">Contact</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="container">
+      <div class="split">
+        <div>
+          <div class="kicker">For advisors</div>
+          <h1 class="h1">A calm, credible buyer your clients will feel comfortable with.</h1>
+          <div class="lead">
+            Owners want discretion, clarity, and a process that doesn’t disrupt the business. That’s how we operate.
+          </div>
+          <div class="btn-row">
+            <a class="btn primary" href="mailto:info@nelsonlord.co.uk?subject=Nelson%20Lord%20-%20Opportunity%20Intro">Introduce an opportunity</a>
+            <a class="btn ghost" href="tel:+447309690039">07309 690 039</a>
+          </div>
+        </div>
+
+        <div class="img-frame">
+          <img src="/assets/img/advisors.jpg" alt="Advisors page image">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section tight">
+    <div class="container">
+      <div class="grid-2">
+        <div class="card">
+          <h3>How we behave</h3>
+          <ul class="list">
+            <li><strong>Discreet:</strong> controlled conversations, no unnecessary involvement</li>
+            <li><strong>Clear:</strong> fast “yes / no / not yet” feedback</li>
+            <li><strong>Calm:</strong> simple process, minimal disruption</li>
+            <li><strong>Fair:</strong> sensible structure and respectful negotiation</li>
+            <li><strong>Reliable:</strong> we do what we say we’ll do</li>
+          </ul>
+        </div>
+
+        <div class="card soft">
+          <h3>What works best for introductions</h3>
+          <ul class="list">
+            <li>A short blind profile is perfect to begin</li>
+            <li>High-level financials (even approximate) help</li>
+            <li>We’re happy to speak owner-to-owner quickly if appropriate</li>
+            <li>If it’s not for us, we’ll say so early</li>
+          </ul>
+          <p class="small" style="margin-top:14px">We aim to be easy to work with — and to protect your relationship with the client.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="container">
+      <div class="footer-row">
+        <div>© <span id="y"></span> Nelson Lord</div>
+        <div>
+          <a href="tel:+447309690039">07309 690 039</a> ·
+          <a href="mailto:info@nelsonlord.co.uk">info@nelsonlord.co.uk</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+</body>
+</html>
