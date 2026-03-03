@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nelson Lord — For Corporate &amp; Commercial Lawyers</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --cream: #F7F5EF;
+      --white: #FFFFFF;
+      --black: #1A1A1A;
+      --mid: #4A4A4A;
+      --light: #8A8A8A;
+      --charcoal: #2C3E50;
+      --charcoal-light: #4A6278;
+      --border: #E0DDD5;
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'Inter', -apple-system, sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--cream); color: var(--black); font-family: var(--sans); font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+
+    nav { background: var(--cream); border-bottom: 1px solid var(--border); padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
+    .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .logo-mark { width: 36px; height: 36px; border: 2px solid var(--charcoal); display: flex; align-items: center; justify-content: center; font-family: var(--serif); font-weight: 700; font-size: 14px; color: var(--black); }
+    .logo-name { font-family: var(--serif); font-size: 16px; font-weight: 700; color: var(--black); letter-spacing: 0.05em; }
+    .nav-cta { background: var(--black); color: var(--white); padding: 10px 22px; font-size: 14px; font-weight: 500; text-decoration: none; border-radius: 4px; }
+
+    .hero { max-width: 900px; margin: 0 auto; padding: 100px 40px 80px; }
+    .hero-label { font-size: 12px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--charcoal-light); margin-bottom: 24px; }
+    .hero h1 { font-family: var(--serif); font-size: clamp(36px, 5vw, 60px); font-weight: 700; line-height: 1.15; color: var(--black); margin-bottom: 32px; }
+    .hero h1 em { font-style: italic; color: var(--mid); }
+    .hero-lead { font-size: 20px; color: var(--mid); line-height: 1.7; max-width: 680px; margin-bottom: 48px; }
+    .hero-cta-group { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+    .btn-primary { background: var(--black); color: var(--white); padding: 14px 28px; font-size: 15px; font-weight: 500; text-decoration: none; border-radius: 4px; }
+    .btn-secondary { color: var(--black); font-size: 15px; font-weight: 500; text-decoration: none; border-bottom: 1px solid var(--black); padding-bottom: 2px; }
+
+    .divider { max-width: 900px; margin: 0 auto; padding: 0 40px; }
+    .divider hr { border: none; border-top: 1px solid var(--border); }
+
+    section { max-width: 900px; margin: 0 auto; padding: 80px 40px; }
+    section h2 { font-family: var(--serif); font-size: clamp(26px, 3.5vw, 40px); font-weight: 700; color: var(--black); margin-bottom: 24px; line-height: 1.25; }
+    section p { color: var(--mid); font-size: 17px; margin-bottom: 20px; max-width: 680px; }
+
+    .insight-box { background: var(--white); border: 1px solid var(--border); border-left: 4px solid var(--charcoal); padding: 32px 36px; margin: 40px 0; }
+    .insight-box p { font-family: var(--serif); font-size: 20px; font-style: italic; color: var(--black); line-height: 1.5; margin: 0; }
+    .insight-box cite { display: block; margin-top: 12px; font-family: var(--sans); font-size: 13px; font-style: normal; color: var(--light); letter-spacing: 0.05em; text-transform: uppercase; }
+
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 40px; }
+    .grid-item { background: var(--white); border: 1px solid var(--border); padding: 28px; }
+    .grid-item h3 { font-family: var(--serif); font-size: 20px; font-weight: 700; color: var(--black); margin-bottom: 12px; }
+    .grid-item p { font-size: 15px; color: var(--mid); margin: 0; }
+
+    .profile-row { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 40px; }
+    .profile-card { background: var(--white); border: 1px solid var(--border); padding: 32px; }
+    .profile-card .name { font-family: var(--serif); font-size: 22px; font-weight: 700; color: var(--black); margin-bottom: 8px; }
+    .profile-card .role { font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--charcoal-light); margin-bottom: 16px; }
+    .profile-card p { font-size: 15px; color: var(--mid); margin: 0; }
+
+    .criteria-list { list-style: none; margin-top: 32px; }
+    .criteria-list li { display: flex; align-items: flex-start; gap: 16px; padding: 18px 0; border-bottom: 1px solid var(--border); font-size: 16px; color: var(--mid); }
+    .criteria-list li:last-child { border-bottom: none; }
+    .criteria-list li::before { content: '→'; color: var(--charcoal); font-weight: 700; flex-shrink: 0; margin-top: 2px; }
+    .criteria-list li strong { color: var(--black); }
+
+    .cta-section { background: var(--black); color: var(--white); padding: 80px 40px; text-align: center; }
+    .cta-section h2 { font-family: var(--serif); font-size: clamp(28px, 4vw, 48px); font-weight: 700; margin-bottom: 20px; }
+    .cta-section p { font-size: 18px; color: #AAAAAA; max-width: 600px; margin: 0 auto 40px; }
+    .cta-section .btn-white { background: var(--white); color: var(--black); padding: 16px 36px; font-size: 16px; font-weight: 600; text-decoration: none; border-radius: 4px; display: inline-block; }
+    .cta-section .contact-details { margin-top: 32px; font-size: 15px; color: #888; }
+    .cta-section .contact-details a { color: #CCC; text-decoration: none; }
+
+    footer { background: var(--cream); border-top: 1px solid var(--border); padding: 32px 40px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+    footer .logo-name { font-family: var(--serif); font-size: 15px; font-weight: 700; color: var(--black); }
+    footer p { font-size: 13px; color: var(--light); }
+
+    @media (max-width: 640px) {
+      nav { padding: 16px 20px; }
+      .hero, section, .divider { padding-left: 20px; padding-right: 20px; }
+      .profile-row, .grid-2 { grid-template-columns: 1fr; }
+      .hero-cta-group { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="https://www.nelsonlord.co.uk" class="logo">
+      <div class="logo-mark">NL</div>
+      <span class="logo-name">NELSON LORD</span>
+    </a>
+    <a href="#contact" class="nav-cta">Request a call</a>
+  </nav>
+
+  <div class="hero">
+    <div class="hero-label">For Corporate &amp; Commercial Lawyers</div>
+    <h1>A buyer who respects the process<br>and <em>actually closes.</em></h1>
+    <p class="hero-lead">Your client needs a clean exit. You need a counterparty who is organised, well-funded, and committed to completing. We are professional acquirers who understand the legal process and have no interest in wasting anyone's time.</p>
+    <div class="hero-cta-group">
+      <a href="#contact" class="btn-primary">Request a confidential 15-minute call</a>
+      <a href="#how-we-operate" class="btn-secondary">How we operate</a>
+    </div>
+  </div>
+
+  <div class="divider"><hr /></div>
+
+  <section>
+    <h2>The problem with most buyers.</h2>
+    <p>You have seen it before. A promising deal that drags on for months, only to collapse at the eleventh hour. A buyer who submits a full-price offer and then re-trades on price once due diligence is underway. An inexperienced acquirer who cannot get their financing in order. These situations waste your time, damage your client's confidence, and cost everyone money.</p>
+    <div class="insight-box">
+      <p>"The quality of referrals from legal professionals can be very high, particularly in distressed or time-sensitive situations where the solicitor is actively looking for a solution for their client."</p>
+      <cite>Off-Market Deal Sourcing Playbook, 2026</cite>
+    </div>
+    <p>We are a different kind of buyer. Our entire process is designed to give you and your client the certainty you need to proceed with confidence.</p>
+  </section>
+
+  <div class="divider"><hr /></div>
+
+  <section id="how-we-operate">
+    <h2>How we operate.</h2>
+    <p>We are professional acquirers with a structured, disciplined approach to every transaction. This means we are a predictable, reliable counterparty throughout the legal process.</p>
+    <div class="grid-2">
+      <div class="grid-item">
+        <h3>Committed Capital</h3>
+        <p>Our offers are fully funded. There is no financing contingency. When we issue a Letter of Intent, we have the capital to complete.</p>
+      </div>
+      <div class="grid-item">
+        <h3>No Last-Minute Re-Trading</h3>
+        <p>We conduct thorough upfront analysis before making an offer. We do not use due diligence as an opportunity to renegotiate the price.</p>
+      </div>
+      <div class="grid-item">
+        <h3>Efficient Due Diligence</h3>
+        <p>Our DD requests are specific and structured. We know what we are looking for and we do not conduct fishing expeditions that waste your client's time.</p>
+      </div>
+      <div class="grid-item">
+        <h3>Clean Documentation</h3>
+        <p>We work with experienced corporate lawyers and produce clean, well-structured transaction documents. We are not first-time buyers learning on the job.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"><hr /></div>
+
+  <section>
+    <h2>A mutually beneficial relationship.</h2>
+    <p>We are building a portfolio of acquisitions over the coming years. This means we are a recurring source of transactional work, not a one-off client. We value good legal advice and are happy to instruct firms who demonstrate quality and efficiency.</p>
+    <p>When you introduce a client to us, you are connecting them with a credible, professional buyer. In return, we are happy to discuss instructing your firm on the legal work for the transaction and on future acquisitions.</p>
+    <ul class="criteria-list">
+      <li><strong>Recurring transactional work</strong> — we are actively acquiring and will need legal support on multiple deals per year</li>
+      <li><strong>A professional, organised counterparty</strong> — we respect your process and your client's time</li>
+      <li><strong>A clear, honest relationship</strong> — we tell you what we need and we deliver what we promise</li>
+    </ul>
+  </section>
+
+  <div class="divider"><hr /></div>
+
+  <section>
+    <h2>What we acquire.</h2>
+    <p>We focus on established UK service businesses with a history of profitability and recurring revenue. Our mandate is clear and consistent.</p>
+    <ul class="criteria-list">
+      <li><strong>£150,000 – £500,000+ in sustainable EBITDA</strong></li>
+      <li><strong>Recurring or contracted revenue</strong> — compliance services, regulated B2B services</li>
+      <li><strong>A founder committed to a clean exit</strong> and a smooth transition period</li>
+      <li><strong>No active legal or regulatory risks</strong> that would prevent a clean share or asset purchase</li>
+    </ul>
+  </section>
+
+  <div class="divider"><hr /></div>
+
+  <section>
+    <h2>Good people. Calm execution.</h2>
+    <div class="profile-row">
+      <div class="profile-card">
+        <div class="name">Nigel Perera</div>
+        <div class="role">Co-Founder</div>
+        <p>Nigel leads the acquisition process. He is calm, organised, and focused on delivering a clean, certain outcome. He is the primary point of contact throughout the transaction.</p>
+      </div>
+      <div class="profile-card">
+        <div class="name">John Ray</div>
+        <div class="role">Co-Founder</div>
+        <p>John leads post-acquisition operations and transition management. His involvement ensures that the business continues to run smoothly after completion, protecting the value of the transaction.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-section" id="contact">
+    <h2>Let's establish a working relationship.</h2>
+    <p>A brief introductory call is all it takes. We can discuss our acquisition criteria and how we can work together when you have a client considering their options.</p>
+    <a href="mailto:info@nelsonlord.co.uk?subject=Legal Introduction - Potential Transaction" class="btn-white">Request a 15-minute call</a>
+    <div class="contact-details">
+      Or reach us directly: <a href="tel:07309690039">07309 690 039</a> &nbsp;·&nbsp; <a href="mailto:info@nelsonlord.co.uk">info@nelsonlord.co.uk</a>
+    </div>
+  </div>
+
+  <footer>
+    <span class="logo-name">NELSON LORD</span>
+    <p>© 2026 Nelson Lord. All rights reserved. &nbsp;·&nbsp; <a href="https://www.nelsonlord.co.uk" style="color: inherit;">nelsonlord.co.uk</a></p>
+  </footer>
+
+</body>
+</html>
