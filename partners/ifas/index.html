@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nelson Lord — For IFAs &amp; Wealth Managers</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --cream: #F7F5EF;
+      --white: #FFFFFF;
+      --black: #1A1A1A;
+      --mid: #4A4A4A;
+      --light: #8A8A8A;
+      --blue: #1A4A7A;
+      --blue-light: #2E6FAD;
+      --border: #E0DDD5;
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'Inter', -apple-system, sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--cream); color: var(--black); font-family: var(--sans); font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+
+    nav { background: var(--cream); border-bottom: 1px solid var(--border); padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
+    .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .logo-mark { width: 36px; height: 36px; border: 2px solid var(--blue); display: flex; align-items: center; justify-content: center; font-family: var(--serif); font-weight: 700; font-size: 14px; color: var(--black); }
+    .logo-name { font-family: var(--serif); font-size: 16px; font-weight: 700; color: var(--black); letter-spacing: 0.05em; }
+    .nav-cta { background: var(--black); color: var(--white); padding: 10px 22px; font-size: 14px; font-weight: 500; text-decoration: none; border-radius: 4px; }
+
+    .hero { max-width: 900px; margin: 0 auto; padding: 100px 40px 80px; }
+    .hero-label { font-size: 12px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--blue-light); margin-bottom: 24px; }
+    .hero h1 { font-family: var(--serif); font-size: clamp(36px, 5vw, 60px); font-weight: 700; line-height: 1.15; color: var(--black); margin-bottom: 32px; }
+    .hero h1 em { font-style: italic; color: var(--mid); }
+    .hero-lead { font-size: 20px; color: var(--mid); line-height: 1.7; max-width: 680px; margin-bottom: 48px; }
+    .hero-cta-group { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+    .btn-primary { background: var(--black); color: var(--white); padding: 14px 28px; font-size: 15px; font-weight: 500; text-decoration: none; border-radius: 4px; }
+    .btn-secondary { color: var(--black); font-size: 15px; font-weight: 500; text-decoration: none; border-bottom: 1px solid var(--black); padding-bottom: 2px; }
+
+    .divider { max-width: 900px; margin: 0 auto; padding: 0 40px; }
+    .divider hr { border: none; border-top: 1px solid var(--border); }
+
+    section { max-width: 900px; margin: 0 auto; padding: 80px 40px; }
+    section h2 { font-family: var(--serif); font-size: clamp(26px, 3.5vw, 40px); font-weight: 700; color: var(--black); margin-bottom: 24px; line-height: 1.25; }
+    section p { color: var(--mid); font-size: 17px; margin-bottom: 20px; max-width: 680px; }
+    section p:last-child { margin-bottom: 0; }
+
+    .insight-box { background: var(--white); border: 1px solid var(--border); border-left: 4px solid var(--blue); padding: 32px 36px; margin: 40px 0; }
+    .insight-box p { font-family: var(--serif); font-size: 20px; font-style: italic; color: var(--black); line-height: 1.5; margin: 0; }
+    .insight-box cite { display: block; margin-top: 12px; font-family: var(--sans); font-size: 13px; font-style: normal; color: var(--light); letter-spacing: 0.05em; text-transform: uppercase; }
+
+    .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; margin-top: 40px; }
+    .grid-item { background: var(--white); border: 1px solid var(--border); padding: 28px; }
+    .grid-item .num { font-family: var(--serif); font-size: 36px; font-weight: 700; color: var(--blue); line-height: 1; margin-bottom: 12px; }
+    .grid-item h3 { font-family: var(--serif); font-size: 18px; font-weight: 700; color: var(--black); margin-bottom: 8px; }
+    .grid-item p { font-size: 15px; color: var(--mid); margin: 0; }
+
+    .profile-row { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 40px; }
+    .profile-card { background: var(--white); border: 1px solid var(--border); padding: 32px; }
+    .profile-card .name { font-family: var(--serif); font-size: 22px; font-weight: 700; color: var(--black); margin-bottom: 8px; }
+    .profile-card .role { font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--blue-light); margin-bottom: 16px; }
+    .profile-card p { font-size: 15px; color: var(--mid); margin: 0; }
+
+    .criteria-list { list-style: none; margin-top: 32px; }
+    .criteria-list li { display: flex; align-items: flex-start; gap: 16px; padding: 18px 0; border-bottom: 1px solid var(--border); font-size: 16px; color: var(--mid); }
+    .criteria-list li:last-child { border-bottom: none; }
+    .criteria-list li::before { content: '→'; color: var(--blue); font-weight: 700; flex-shrink: 0; margin-top: 2px; }
+    .criteria-list li strong { color: var(--black); }
+
+    /* TIMELINE */
+    .timeline { margin-top: 40px; }
+    .timeline-item { display: flex; gap: 24px; padding: 24px 0; border-bottom: 1px solid var(--border); }
+    .timeline-item:last-child { border-bottom: none; }
+    .timeline-num { font-family: var(--serif); font-size: 28px; font-weight: 700; color: var(--blue); flex-shrink: 0; width: 40px; }
+    .timeline-content h3 { font-family: var(--serif); font-size: 18px; font-weight: 700; color: var(--black); margin-bottom: 6px; }
+    .timeline-content p { font-size: 15px; color: var(--mid); margin: 0; }
+
+    .cta-section { background: var(--black); color: var(--white); padding: 80px 40px; text-align: center; }
+    .cta-section h2 { font-family: var(--serif); font-size: clamp(28px, 4vw, 48px); font-weight: 700; margin-bottom: 20px; }
+    .cta-section p { font-size: 18px; color: #AAAAAA; max-width: 600px; margin: 0 auto 40px; }
+    .cta-section .btn-white { background: var(--white); color: var(--black); padding: 16px 36px; font-size: 16px; font-weight: 600; text-decoration: none; border-radius: 4px; display: inline-block; }
+    .cta-section .contact-details { margin-top: 32px; font-size: 15px; color: #888; }
+    .cta-section .contact-details a { color: #CCC; text-decoration: none; }
+
+    footer { background: var(--cream); border-top: 1px solid var(--border); padding: 32px 40px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+    footer .logo-name { font-family: var(--serif); font-size: 15px; font-weight: 700; color: var(--black); }
+    footer p { font-size: 13px; color: var(--light); }
+
+    @media (max-width: 640px) {
+      nav { padding: 16px 20px; }
+      .hero, section, .divider { padding-left: 20px; padding-right: 20px; }
+      .profile-row { grid-template-columns: 1fr; }
+      .hero-cta-group { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="https://www.nelsonlord.co.uk" class="logo">
+      <div class="logo-mark">NL</div>
+      <span class="logo-name">NELSON LORD</span>
+    </a>
+    <a href="#contact" class="nav-cta">Request a call</a>
+  </nav>
+
+  <div class="hero">
+    <div class="hero-label">For IFAs &amp; Wealth Managers</div>
+    <h1>Your client's business is their <em>largest asset.</em><br>We turn it into a liquidity event.</h1>
+    <p class="hero-lead">A business owner's retirement depends on a successful exit. We provide a direct, off-market path to realise the value of their life's work — with the certainty and discretion that a brokered sale cannot offer.</p>
+    <div class="hero-cta-group">
+      <a href="#contact" class="btn-primary">Request a confidential 15-minute call</a>
+      <a href="#the-opportunity" class="btn-secondary">The opportunity for your clients</a>
+    </div>
+  </div>
+
+  <div class="divider"><hr /></div>
+
+  <section id="the-opportunity">
+    <h2>The single largest financial event of your client's life.</h2>
+    <p>For most business owners, the sale of their company will generate more wealth than every other financial decision they make combined. It is the event that funds their retirement, secures their family's future, and determines their financial legacy.</p>
+    <p>Yet the path to that event is often poorly managed. A brokered sale can take 12–18 months, expose the business to confidentiality risks, and result in a lower price than expected once deal costs and tax are accounted for. Many owners simply do not know there is a better option.</p>
+    <div class="insight-box">
+      <p>"Wealth managers and IFAs who advise business owners on retirement planning are intimately involved in the financial planning that precedes a sale. They often know the owner's 'number' — the amount they need from a sale to fund their retirement."</p>
+      <cite>Off-Market Deal Sourcing Playbook, 2026</cite>
+    </div>
+    <p>You are in a unique position. You know your client's financial goals. You know their "number." You can help them achieve it — by connecting them with a direct, credible buyer who can move with certainty and discretion.</p>
+  </section>
+
+  <div class="divider"><hr /></div>
+
+  <section>
+    <h2>We are the liquidity event.</h2>
+    <p>Nelson Lord is a UK acquisition firm that buys established, profitable service businesses directly, with committed capital. We are not brokers. We are the principals who will acquire your client's business and provide the funds for their next chapter.</p>
+    <div class="grid-3">
+      <div class="grid-item">
+        <div class="num">Direct</div>
+        <h3>No Auction</h3>
+        <p>Your client deals with us alone. No competing bidders, no public process, no confidentiality risk.</p>
+      </div>
+      <div class="grid-item">
+        <div class="num">Certain</div>
+        <h3>Committed Capital</h3>
+        <p>Our offers are fully funded. We do not re-trade. When we issue an LOI, we are ready to complete.</p>
+      </div>
+      <div class="grid-item">
+        <div class="num">Flexible</div>
+        <h3>Tax-Efficient Structures</h3>
+        <p>We structure deals around your client's personal financial goals, often with deferred consideration that provides ongoing income.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"><hr /></div>
+
+  <section>
+    <h2>How we work with you and your client.</h2>
+    <p>Our process is designed to be seamless for you as the advisor, and as smooth as possible for your client.</p>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-num">01</div>
+        <div class="timeline-content">
+          <h3>A confidential conversation with us.</h3>
+          <p>You share a brief, anonymous description of the business. We confirm fit within 48 hours and explain exactly what a deal could look like.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-num">02</div>
+        <div class="timeline-content">
+          <h3>An introduction, at the right moment.</h3>
+          <p>When your client is ready, you introduce us. We handle the conversation with discretion and respect, protecting your relationship with them.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-num">03</div>
+        <div class="timeline-content">
+          <h3>A clear, honest valuation.</h3>
+          <p>We provide a no-obligation assessment of what the business is worth and what a structured exit could deliver for your client, net of tax.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-num">04</div>
+        <div class="timeline-content">
+          <h3>A clean close and a new client relationship.</h3>
+          <p>Your client receives a significant capital sum. You gain a new, high-value investment client with a clear mandate and a clear timeline. Everyone benefits.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"><hr /></div>
+
+  <section>
+    <h2>The businesses we acquire.</h2>
+    <p>We are disciplined acquirers with a clear mandate. This means we can tell you quickly whether a client's business is a fit, saving everyone time.</p>
+    <ul class="criteria-list">
+      <li><strong>£150,000 – £500,000+ in sustainable EBITDA</strong></li>
+      <li><strong>Recurring or contracted revenue</strong> — compliance services, regulated B2B services, subscriptions</li>
+      <li><strong>A founder who is genuinely motivated to exit</strong> and secure their financial future</li>
+      <li><strong>A team that can run the business</strong> without the founder being present every day</li>
+    </ul>
+  </section>
+
+  <div class="divider"><hr /></div>
+
+  <section>
+    <h2>Good people. Calm execution.</h2>
+    <p>Your client is trusting you with the most important financial decision of their life. We take that responsibility seriously.</p>
+    <div class="profile-row">
+      <div class="profile-card">
+        <div class="name">Nigel Perera</div>
+        <div class="role">Co-Founder</div>
+        <p>Nigel leads the acquisition process. He is calm, responsive, and focused on delivering a clear, certain outcome for every seller we work with.</p>
+      </div>
+      <div class="profile-card">
+        <div class="name">John Ray</div>
+        <div class="role">Co-Founder</div>
+        <p>John leads post-acquisition operations. His priority is ensuring the business continues to thrive after the founder steps back, protecting the value of the transaction.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-section" id="contact">
+    <h2>Let's help your client achieve their exit.</h2>
+    <p>A brief, confidential conversation is all it takes to establish whether we can help. We will give you a clear picture of what a deal could look like before you introduce us to your client.</p>
+    <a href="mailto:info@nelsonlord.co.uk?subject=IFA Introduction - Client Exit Planning" class="btn-white">Request a 15-minute call</a>
+    <div class="contact-details">
+      Or reach us directly: <a href="tel:07309690039">07309 690 039</a> &nbsp;·&nbsp; <a href="mailto:info@nelsonlord.co.uk">info@nelsonlord.co.uk</a>
+    </div>
+  </div>
+
+  <footer>
+    <span class="logo-name">NELSON LORD</span>
+    <p>© 2026 Nelson Lord. All rights reserved. &nbsp;·&nbsp; <a href="https://www.nelsonlord.co.uk" style="color: inherit;">nelsonlord.co.uk</a></p>
+  </footer>
+
+</body>
+</html>
