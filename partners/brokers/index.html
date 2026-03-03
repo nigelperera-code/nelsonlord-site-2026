@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nelson Lord — For Business Brokers</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --cream: #F7F5EF;
+      --white: #FFFFFF;
+      --black: #1A1A1A;
+      --mid: #4A4A4A;
+      --light: #8A8A8A;
+      --green: #166534;
+      --green-light: #16A34A;
+      --border: #E0DDD5;
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'Inter', -apple-system, sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--cream); color: var(--black); font-family: var(--sans); font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+
+    nav { background: var(--cream); border-bottom: 1px solid var(--border); padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
+    .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .logo-mark { width: 36px; height: 36px; border: 2px solid var(--green-light); display: flex; align-items: center; justify-content: center; font-family: var(--serif); font-weight: 700; font-size: 14px; color: var(--black); }
+    .logo-name { font-family: var(--serif); font-size: 16px; font-weight: 700; color: var(--black); letter-spacing: 0.05em; }
+    .nav-cta { background: var(--black); color: var(--white); padding: 10px 22px; font-size: 14px; font-weight: 500; text-decoration: none; border-radius: 4px; }
+
+    .hero { max-width: 900px; margin: 0 auto; padding: 100px 40px 80px; }
+    .hero-label { font-size: 12px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--green-light); margin-bottom: 24px; }
+    .hero h1 { font-family: var(--serif); font-size: clamp(36px, 5vw, 60px); font-weight: 700; line-height: 1.15; color: var(--black); margin-bottom: 32px; }
+    .hero h1 em { font-style: italic; color: var(--mid); }
+    .hero-lead { font-size: 20px; color: var(--mid); line-height: 1.7; max-width: 680px; margin-bottom: 48px; }
+    .hero-cta-group { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+    .btn-primary { background: var(--black); color: var(--white); padding: 14px 28px; font-size: 15px; font-weight: 500; text-decoration: none; border-radius: 4px; }
+    .btn-secondary { color: var(--black); font-size: 15px; font-weight: 500; text-decoration: none; border-bottom: 1px solid var(--black); padding-bottom: 2px; }
+
+    .divider { max-width: 900px; margin: 0 auto; padding: 0 40px; }
+    .divider hr { border: none; border-top: 1px solid var(--border); }
+
+    section { max-width: 900px; margin: 0 auto; padding: 80px 40px; }
+    section h2 { font-family: var(--serif); font-size: clamp(26px, 3.5vw, 40px); font-weight: 700; color: var(--black); margin-bottom: 24px; line-height: 1.25; }
+    section p { color: var(--mid); font-size: 17px; margin-bottom: 20px; max-width: 680px; }
+
+    .insight-box { background: var(--white); border: 1px solid var(--border); border-left: 4px solid var(--green-light); padding: 32px 36px; margin: 40px 0; }
+    .insight-box p { font-family: var(--serif); font-size: 20px; font-style: italic; color: var(--black); line-height: 1.5; margin: 0; }
+    .insight-box cite { display: block; margin-top: 12px; font-family: var(--sans); font-size: 13px; font-style: normal; color: var(--light); letter-spacing: 0.05em; text-transform: uppercase; }
+
+    .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; margin-top: 40px; }
+    .grid-item { background: var(--white); border: 1px solid var(--border); padding: 28px; }
+    .grid-item .num { font-family: var(--serif); font-size: 36px; font-weight: 700; color: var(--green-light); line-height: 1; margin-bottom: 12px; }
+    .grid-item h3 { font-family: var(--serif); font-size: 18px; font-weight: 700; color: var(--black); margin-bottom: 8px; }
+    .grid-item p { font-size: 15px; color: var(--mid); margin: 0; }
+
+    .profile-row { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 40px; }
+    .profile-card { background: var(--white); border: 1px solid var(--border); padding: 32px; }
+    .profile-card .name { font-family: var(--serif); font-size: 22px; font-weight: 700; color: var(--black); margin-bottom: 8px; }
+    .profile-card .role { font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--green-light); margin-bottom: 16px; }
+    .profile-card p { font-size: 15px; color: var(--mid); margin: 0; }
+
+    .criteria-list { list-style: none; margin-top: 32px; }
+    .criteria-list li { display: flex; align-items: flex-start; gap: 16px; padding: 18px 0; border-bottom: 1px solid var(--border); font-size: 16px; color: var(--mid); }
+    .criteria-list li:last-child { border-bottom: none; }
+    .criteria-list li::before { content: '→'; color: var(--green-light); font-weight: 700; flex-shrink: 0; margin-top: 2px; }
+    .criteria-list li strong { color: var(--black); }
+
+    /* CHECKLIST */
+    .checklist { list-style: none; margin-top: 32px; }
+    .checklist li { display: flex; align-items: flex-start; gap: 14px; padding: 16px 0; border-bottom: 1px solid var(--border); font-size: 16px; color: var(--mid); }
+    .checklist li:last-child { border-bottom: none; }
+    .check-num { background: var(--green-light); color: var(--white); width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; flex-shrink: 0; margin-top: 2px; }
+    .checklist li strong { color: var(--black); }
+
+    .cta-section { background: var(--black); color: var(--white); padding: 80px 40px; text-align: center; }
+    .cta-section h2 { font-family: var(--serif); font-size: clamp(28px, 4vw, 48px); font-weight: 700; margin-bottom: 20px; }
+    .cta-section p { font-size: 18px; color: #AAAAAA; max-width: 600px; margin: 0 auto 40px; }
+    .cta-section .btn-white { background: var(--white); color: var(--black); padding: 16px 36px; font-size: 16px; font-weight: 600; text-decoration: none; border-radius: 4px; display: inline-block; }
+    .cta-section .contact-details { margin-top: 32px; font-size: 15px; color: #888; }
+    .cta-section .contact-details a { color: #CCC; text-decoration: none; }
+
+    footer { background: var(--cream); border-top: 1px solid var(--border); padding: 32px 40px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+    footer .logo-name { font-family: var(--serif); font-size: 15px; font-weight: 700; color: var(--black); }
+    footer p { font-size: 13px; color: var(--light); }
+
+    @media (max-width: 640px) {
+      nav { padding: 16px 20px; }
+      .hero, section, .divider { padding-left: 20px; padding-right: 20px; }
+      .profile-row { grid-template-columns: 1fr; }
+      .hero-cta-group { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="https://www.nelsonlord.co.uk" class="logo">
+      <div class="logo-mark">NL</div>
+      <span class="logo-name">NELSON LORD</span>
+    </a>
+    <a href="#contact" class="nav-cta">Request a call</a>
+  </nav>
+
+  <div class="hero">
+    <div class="hero-label">For Business Brokers</div>
+    <h1>A quick yes, committed capital,<br>and a <em>clean close.</em></h1>
+    <p class="hero-lead">You have a quality listing. You need a buyer who can recognise it, move decisively, and complete without drama. We are professional acquirers with a clear mandate, committed capital, and a 48-hour response guarantee. No ghosting. No games.</p>
+    <div class="hero-cta-group">
+      <a href="#contact" class="btn-primary">Send us a blind profile</a>
+      <a href="#our-mandate" class="btn-secondary">Our acquisition mandate</a>
+    </div>
+  </div>
+
+  <div class="divider"><hr /></div>
+
+  <section>
+    <h2>We are the "Lane 1" buyer you are looking for.</h2>
+    <p>Every broker has a mental list of buyers they call first when a quality deal comes in. The buyers who respond quickly, give clear feedback, and have a track record of completing. We want to be on that list.</p>
+    <p>Our entire process is designed around speed, certainty, and respect for your role. We know that your reputation depends on the quality of the buyers you bring to your clients, and we take that responsibility seriously.</p>
+    <div class="insight-box">
+      <p>"We don't ghost. You get a clear 'Yes' or 'No' with reasons. 48-hour turnaround."</p>
+      <cite>Nelson Lord Acquisition Promise</cite>
+    </div>
+  </section>
+
+  <div class="divider"><hr /></div>
+
+  <section>
+    <h2>What makes us different.</h2>
+    <div class="grid-3">
+      <div class="grid-item">
+        <div class="num">48h</div>
+        <h3>Response Guarantee</h3>
+        <p>Send us a blind profile or teaser. We respond with a clear yes, no, or tell-me-more within 48 hours. Every time.</p>
+      </div>
+      <div class="grid-item">
+        <div class="num">100%</div>
+        <h3>Funded Offers</h3>
+        <p>Our offers are backed by committed capital. No financing contingency. No last-minute surprises. When we issue an LOI, we are ready to complete.</p>
+      </div>
+      <div class="grid-item">
+        <div class="num">No</div>
+        <h3>Re-Trading</h3>
+        <p>We conduct thorough analysis before making an offer. We do not use due diligence as a tool to renegotiate the price we agreed.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"><hr /></div>
+
+  <section id="our-mandate">
+    <h2>Our acquisition mandate.</h2>
+    <p>We are disciplined acquirers. We know exactly what we are looking for, which means we can give you a fast, accurate assessment of any opportunity you bring us.</p>
+    <p>Before you send us a full information memorandum, run through this quick checklist. If you can answer yes to most of these, it is worth a conversation.</p>
+    <ul class="checklist">
+      <li><div class="check-num">1</div><div><strong>Is sustainable EBITDA £150,000 or above?</strong> We are not the right buyer for micro-businesses.</div></li>
+      <li><div class="check-num">2</div><div><strong>Is at least 50% of revenue recurring or contracted?</strong> Predictable revenue is our primary filter.</div></li>
+      <li><div class="check-num">3</div><div><strong>Is the founder willing to stay for a transition period?</strong> We value continuity and a smooth handover.</div></li>
+      <li><div class="check-num">4</div><div><strong>Is no single customer more than 30% of revenue?</strong> We avoid binary concentration risk.</div></li>
+      <li><div class="check-num">5</div><div><strong>Is there a clear, genuine reason for the sale?</strong> Retirement, health, or succession — not just testing the market.</div></li>
+      <li><div class="check-num">6</div><div><strong>Is the business not dependent on heavy paid advertising?</strong> We prefer organic, embedded demand drivers.</div></li>
+    </ul>
+  </section>
+
+  <div class="divider"><hr /></div>
+
+  <section>
+    <h2>The sectors we are actively building in.</h2>
+    <ul class="criteria-list">
+      <li><strong>B2B Compliance &amp; Regulatory Services</strong> — water hygiene, legionella testing, environmental compliance, fire safety</li>
+      <li><strong>Clinically Governed Healthcare</strong> — ADHD assessment, private mental health, regulated monitoring services</li>
+      <li><strong>Established B2B Service Businesses</strong> — any sector with recurring revenue, defensible market position, and £150k+ EBITDA</li>
+    </ul>
+    <p style="margin-top: 32px;">We actively avoid project-based businesses, heavy manufacturing, recruitment agencies, and businesses where the founder is the sole source of revenue.</p>
+  </section>
+
+  <div class="divider"><hr /></div>
+
+  <section>
+    <h2>Good people. Calm execution.</h2>
+    <div class="profile-row">
+      <div class="profile-card">
+        <div class="name">Nigel Perera</div>
+        <div class="role">Co-Founder</div>
+        <p>Nigel leads acquisition strategy and deal evaluation. He is the primary point of contact for brokers and responds personally to every opportunity we receive.</p>
+      </div>
+      <div class="profile-card">
+        <div class="name">John Ray</div>
+        <div class="role">Co-Founder</div>
+        <p>John leads post-acquisition operations. His involvement ensures that every business we acquire continues to thrive after completion, protecting the value of the transaction for all parties.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-section" id="contact">
+    <h2>Send us your best deal first.</h2>
+    <p>We are actively deploying capital and ready to move quickly on the right opportunity. Send us a blind profile and we will come back to you within 48 hours with a clear answer.</p>
+    <a href="mailto:info@nelsonlord.co.uk?subject=Broker Introduction - New Listing" class="btn-white">Send a blind profile</a>
+    <div class="contact-details">
+      Or reach us directly: <a href="tel:07309690039">07309 690 039</a> &nbsp;·&nbsp; <a href="mailto:info@nelsonlord.co.uk">info@nelsonlord.co.uk</a>
+    </div>
+  </div>
+
+  <footer>
+    <span class="logo-name">NELSON LORD</span>
+    <p>© 2026 Nelson Lord. All rights reserved. &nbsp;·&nbsp; <a href="https://www.nelsonlord.co.uk" style="color: inherit;">nelsonlord.co.uk</a></p>
+  </footer>
+
+</body>
+</html>
